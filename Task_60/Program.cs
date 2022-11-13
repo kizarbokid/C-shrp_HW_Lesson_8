@@ -26,30 +26,6 @@ int[,,] ToFill3DArray(int l, int m, int n)
     }
     return array;
 }
-//убрать повторы (если они встречаются) из массива
-int ToExcludeRepeatsFrom3DArray(int[,,] array, int i, int j, int k)
-{
-    var rand = new Random();
-    int count = 0;
-    int element;
-    for (int a = 0; a < i; a++)
-    {
-        for (int b = 0; b < j; b++)
-        {
-            for (int c = 0; b < k; b++)
-            {
-                if (array[a, b, c] == array[i, j, k])//если текущий элемент равен последнему сгенерированному элементу, то еще переприсвоить ему значение
-                {
-                    array[a, b, c] = rand.Next(10, 100);
-                    element = array[a, b, c];
-                    c--;// при этом следует вычесть единицу со счетчика, чтобы еще раз проверить число
-                }
-
-            }
-        }
-    }
-    return element;
-}
 // вывод на печать 3D массива
 void ToPrint3DArray(int[,,] array)
 {
