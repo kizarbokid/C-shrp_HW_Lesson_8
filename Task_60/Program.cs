@@ -9,7 +9,7 @@ string ToInputVar(string input_text)
     string result = Console.ReadLine();
     return result;
 }
-// заполнение трехмерного массива рандомными целыми числами
+// заполнение трехмерного массива рандомными целыми двузначными числами
 int[,,] ToFill3DArray(int l, int m, int n)
 {
     int[,,] array = new int[l, m, n];
@@ -20,7 +20,9 @@ int[,,] ToFill3DArray(int l, int m, int n)
         {
             for (int k = 0; k < n; k++)
             {
-                array[i, j, k] = rand.Next(10, 100);
+                array[i, j, k] = rand.Next(-99, 100);
+                if (array[i, j, k] < 10 & array[i, j, k] > -10)
+                {k--;}
             }
         }
     }
