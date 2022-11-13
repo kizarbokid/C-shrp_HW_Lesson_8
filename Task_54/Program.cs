@@ -39,7 +39,7 @@ void ToPrintTable(int[,] table)
         Console.Write($"{i + 1}-я:  ");
         for (int j = 0; j < columns; j++)
         {
-            Console.Write($"{table[i, j]}    ");
+            Console.Write($"{table[i, j]}  ");
         }
         Console.WriteLine();
     }
@@ -85,7 +85,6 @@ int[,] ToPutArrayInRow(int[,] table, int rownum, int[] array)
     }
     return table;
 }
-
 
 string input_text = "количество строк таблицы";
 int n = int.Parse(ToInputVar(input_text));
